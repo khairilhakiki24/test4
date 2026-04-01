@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buku Panduan - SajiOS Premium POS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: system-ui, -apple-system, sans-serif; }
+        .prose-custom p { margin-bottom: 1rem; color: #475569; line-height: 1.6; }
+        .prose-custom code { background-color: #f1f5f9; padding: 0.2rem 0.4rem; border-radius: 0.25rem; font-size: 0.875em; color: #dc2626; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 pb-20">
+    
+    <div class="max-w-4xl mx-auto px-6 py-12">
+        <header class="mb-12 border-b border-slate-200 pb-8 text-center md:text-left">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#dc2626] text-white shadow-xl shadow-red-600/30 mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/><line x1="6" y1="17" x2="18" y2="17"/></svg>
+            </div>
+            <h1 class="text-4xl font-extrabold text-slate-900 mb-3 tracking-tight">Saji<span class="text-[#dc2626]">OS</span></h1>
+            <p class="text-lg text-slate-500">Manual Book & Panduan Modifikasi Source Code (CodeCanyon Ready)</p>
+        </header>
+
+        <!-- FITUR UTAMA -->
+        <section class="mb-12 bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
+            <h2 class="text-2xl font-bold mb-6 flex items-center gap-2 text-slate-800">✨ Fitur Unggulan</h2>
+            <div class="grid md:grid-cols-2 gap-8 prose-custom text-sm">
+                <div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-2">💾 State Persistence</h3>
+                    <p>Pesanan pelanggan yang sedang Anda input tidak akan hilang meski browser tertutup atau di-refresh (F5), berkat integrasi <code>localStorage</code> super cepat.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-2">📂 Kategori Dinamis</h3>
+                    <p>Tidak ada kategori hardcode! Anda bebas membuat "Master Kategori" (misal: Nasi, Lauk, Dimsum) dari menu yang telah disediakan.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-2">🖨️ Desain Print Kasir 58/80mm</h3>
+                    <p>Mendukung cetak struk via printer thermal bluetooth. Layout PDF telah dikunci mati dengan CSS <code>@media print</code> bebas margin yang memastikan struk berada persis di pojok kertas.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg text-slate-900 mb-2">🎨 Sinkronisasi Tema Dinamis</h3>
+                    <p>Perubahan warna pada Pengaturan tidak hanya mengubah warna UI web, tetapi juga warna Status Bar OS di HP (via `<meta name="theme-color">`) secara *real-time* tanpa perlu reload!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PANDUAN PENGGUNA AWAM -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">📱 Panduan Penggunaan & Modifikasi PWA</h2>
+            
+            <div class="space-y-6">
+                <div class="bg-slate-100 p-6 rounded-2xl">
+                    <h3 class="font-bold text-lg mb-2">1. Cara Mengganti Ikon PWA (Muncul di Layar HP)</h3>
+                    <ol class="list-decimal pl-5 text-sm space-y-2 text-slate-700 font-medium">
+                        <li>Siapkan gambar logo Anda (harus rasio persegi 1:1, misalnya logo restoran Anda).</li>
+                        <li>Simpan 2 file gambar berformat PNG: <code>icon-192x192.png</code> dan <code>icon-512x512.png</code>.</li>
+                        <li>Letakkan kedua gambar tersebut di dalam folder <code>assets/</code> (buat folder ini jika belum ada).</li>
+                        <li>Saat pengguna menginstall web melalui browser (Add to Home Screen), ikon ini akan otomatis dipakai.</li>
+                    </ol>
+                </div>
+
+                <div class="bg-slate-100 p-6 rounded-2xl">
+                    <h3 class="font-bold text-lg mb-2">2. Cara Cetak Otomatis (Auto-Print)</h3>
+                    <ol class="list-decimal pl-5 text-sm space-y-2 text-slate-700 font-medium">
+                        <li>Buka menu <strong>Pengaturan</strong>.</li>
+                        <li>Nyalakan saklar (toggle) <strong>Cetak Otomatis</strong>.</li>
+                        <li>Sekarang, setiap kali Anda selesai menekan "Konfirmasi Bayar", dialog printer bawaan browser akan langsung muncul secara otomatis.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- PANDUAN DEVELOPER / CODECANYON -->
+        <section class="mb-12 bg-slate-900 text-slate-300 p-8 rounded-3xl shadow-xl">
+            <h2 class="text-2xl font-bold mb-6 flex items-center gap-2 text-white">💻 Panduan Folder CodeCanyon (Developer)</h2>
+            <p class="mb-6 text-sm text-slate-400">Untuk kemudahan distribusi di CodeCanyon, aplikasi ini saat ini digabung menjadi 1 file HTML. Anda bisa dengan mudah memecahnya berdasarkan komentar yang telah saya sediakan:</p>
+
+            <div class="space-y-6 text-sm">
+                <div>
+                    <h3 class="font-bold text-white mb-1">1. Ekstraksi CSS</h3>
+                    <p class="text-slate-400">Cari baris <code>&lt;!-- FILE: source/assets/css/style.css START --&gt;</code> di dalam <code>index.html</code>. Cut seluruh blok <code>&lt;style&gt;</code> tersebut dan pindahkan ke file <code>assets/css/style.css</code> baru. Lalu panggil menggunakan <code>&lt;link rel="stylesheet"&gt;</code>.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white mb-1">2. Ekstraksi JavaScript</h3>
+                    <p class="text-slate-400">Scroll ke paling bawah file, temukan <code>&lt;!-- FILE: source/assets/js/app.js START --&gt;</code>. Cut seluruh blok <code>&lt;script&gt;</code> tersebut dan simpan sebagai <code>assets/js/app.js</code>.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white mb-1">3. Offline Libraries</h3>
+                    <p class="text-slate-400">Di bagian <code>&lt;head&gt;</code>, Anda akan melihat link CDN untuk Tailwind, SheetJS, dll. Jika pembeli Anda ingin 100% offline murni, mintalah mereka mendownload link tersebut ke komputer mereka dan letakkan di dalam folder <code>assets/js/</code> sesuai nama yang tertera di komentar.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PANDUAN HOSTING -->
+        <section class="mb-10">
+            <h2 class="text-2xl font-bold mb-4">🚀 Cara Hosting / Instalasi</h2>
+            <ol class="list-decimal pl-6 space-y-3 text-slate-700">
+                <li>Upload 3 file utama: <code>index.html</code>, <code>manifest.json</code>, dan <code>sw.js</code> ke layanan hosting statis (misal: GitHub Pages atau Vercel).</li>
+                <li>Setelah dihosting (HTTPS wajib), buka URL aplikasi di browser Chrome/Safari di HP Anda.</li>
+                <li>Pilih opsi browser <strong>"Tambahkan ke Layar Utama"</strong>.</li>
+                <li>Selesai. Aplikasi sudah terinstal dan bisa dipakai offline kapan saja.</li>
+            </ol>
+        </section>
+
+    </div>
+
+    <footer class="text-center py-8 text-slate-500 text-sm border-t border-slate-200 mt-10">
+        &copy; 2026 Bejaja Digital. Hak Cipta Dilindungi.
+    </footer>
+
+</body>
+</html>
